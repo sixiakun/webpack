@@ -18,25 +18,20 @@
 ├── test/
 │   └── unit/                   # unit tests
 │   │   ├── specs/              # test spec files
-│   │   ├── eslintrc            # config file for eslint with extra settings only for unit tests
+│   │   ├── setup.js            # file that runs before Jest tests
 │   │   ├── index.js            # test build entry file
-│   │   ├── jest.conf.js        # Config file when using Jest for unit tests
-│   │   └── karma.conf.js       # test runner config file when using Karma for unit tests
-│   │   ├── setup.js            # file that runs before Jest runs your unit tests
+│   │   └── karma.conf.js       # test runner config file
 │   └── e2e/                    # e2e tests
 │   │   ├── specs/              # test spec files
 │   │   ├── custom-assertions/  # custom assertions for e2e tests
 │   │   ├── runner.js           # test runner script
 │   │   └── nightwatch.conf.js  # test runner config file
 ├── .babelrc                    # babel config
-├── .editorconfig               # indentation, spaces/tabs and similar settings for your editor
-├── .eslintrc.js                # eslint config
-├── .eslintignore               # eslint ignore rules
-├── .gitignore                  # sensible defaults for gitignore
 ├── .postcssrc.js               # postcss config
+├── .eslintrc.js                # eslint config
+├── .editorconfig               # editor config
 ├── index.html                  # index.html template
-├── package.json                # build scripts and dependencies
-└── README.md                   # Default README file
+└── package.json                # build scripts and dependencies
 ```
 
 ### `build/`

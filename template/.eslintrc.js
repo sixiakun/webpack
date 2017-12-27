@@ -22,42 +22,38 @@ module.exports = {
   ],
   {{#if_eq lintConfig "airbnb"}}
   // check if imports actually resolve
-  settings: {
+  'settings': {
     'import/resolver': {
-      webpack: {
-        config: 'build/webpack.base.conf.js'
+      'webpack': {
+        'config': 'build/webpack.base.conf.js'
       }
     }
   },
+  'globals': {
+    'document': true
+  },
   {{/if_eq}}
   // add your custom rules here
-  rules: {
+  'rules': {
     {{#if_eq lintConfig "standard"}}
+    // allow paren-less arrow functions
+    'arrow-parens': 0,
     // allow async-await
-    'generator-star-spacing': 'off',
+    'generator-star-spacing': 0,
     {{/if_eq}}
     {{#if_eq lintConfig "airbnb"}}
     // don't require .vue extension when importing
-    'import/extensions': ['error', 'always', {
-      js: 'never',
-      vue: 'never'
+    'import/extensions': ['off', 'always', {
+      'js': 'never',
+      'vue': 'never'
     }],
-    // disallow reassignment of function parameters
-    // disallow parameter object manipulation except for specific exclusions
-    'no-param-reassign': ['error', {
-      props: true,
-      ignorePropertyModificationsFor: [
-        'state', // for vuex state
-        'acc', // for reduce accumulators
-        'e' // for e.returnvalue
-      ]
-    }],
+    'import/no-unresolved': [0, {commonjs: true, amd: true}],
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {
-      optionalDependencies: ['test/unit/index.js']
+      'optionalDependencies': ['test/unit/index.js']
     }],
     {{/if_eq}}
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
 }

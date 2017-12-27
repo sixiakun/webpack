@@ -8,20 +8,20 @@
 // http://nightwatchjs.org/guide#writing-custom-assertions
 
 exports.assertion = function (selector, count) {
-  this.message = 'Testing if element <' + selector + '> has count: ' + count
-  this.expected = count
+  this.message = 'Testing if element <' + selector + '> has count: ' + count{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  this.expected = count{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   this.pass = function (val) {
-    return val === this.expected
+    return val === this.expected{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   }
   this.value = function (res) {
-    return res.value
+    return res.value{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   }
   this.command = function (cb) {
-    var self = this
-    return this.api.execute(function (selector) {
-      return document.querySelectorAll(selector).length
+    var self = this{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    return this.api.execute(function (selectorToCount) {
+      return document.querySelectorAll(selectorToCount).length{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
     }, [selector], function (res) {
-      cb.call(self, res)
-    })
+      cb.call(self, res){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   }
 }
