@@ -1,0 +1,47 @@
+/*重置浏览器默认样式*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea, p, blockquote, th, td ,button{
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+}
+button{
+  background: none;
+  cursor: pointer;
+}
+
+::-ms-clear, ::-ms-reveal{display: none;} /*去除ie下输入框的×和密码眼睛*/
+input[type=text]::-ms-clear {
+  display:none
+}
+
+table {
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+a{
+  color:inherit;
+  text-decoration: none;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-weight: normal;
+  font-style: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
